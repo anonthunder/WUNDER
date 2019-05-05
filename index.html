@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>WUNDER.IO</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="favicon.png"/>
+    <meta name="description" content="Wrapped Thunder Tokens (WUNDER)">
+    <meta name="author" content="Wrapped Thunder Tokens (WUNDER)">
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Orbitron|Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" integrity="sha256-ENFZrbVzylNbgnXx0n3I1g//2WeO47XxoPe0vkp3NC8=" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="public/css/wunder.css">
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-6  text-left pt-2">
+            <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Lang
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="/en/">ENG</a>
+                    <a class="dropdown-item" href="/cn/">CN</a>
+                    <a class="dropdown-item" href="/fr/">FR</a>
+                    <a class="dropdown-item" href="/kr/">KR</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 text-right pt-2">
+            <a href="#" class="contractURL btn btn-primary" style="color:white !important;" target="_blank">
+                Contract
+            </a>
+        </div>
+    </div>
+</div>
+<h2 class="scroll-down-text" style="position: absolute; top:94%;left: 37%;"><i class="fas fa-arrow-down"></i>&nbsp;&nbsp;WRAP SOME TOKENS!!&nbsp;&nbsp;<i class="fas fa-arrow-down"></i></h2>
+<div class="main-landing-panel">
+    <div class="container text-center">
+        <img style="width:35%; max-width:220px;" src="public/images/wrapped.png">
+        <h1 style="margin-bottom: 80px;display: block;text-shadow: 2px 2px 4px #3c3232;color:black;">What is WUNDER and why do you need it?</h1>
+        <div class="row" style="background-color: #343a40;padding:35px 20px;color:white !important;font-size:16px;">
+            <div class="col-lg-4 text-center mt-md-0 mt-lg-0">
+                <div class="num-disc">1</div>
+                <div style="font-size:17px;">
+                    Thunder Tokens are the native token on ThunderCore. These tokens do not fully conform to ERC20 token standards,
+                    which prevents them from being traded directly for other ERC20 tokens.
+                </div>
+            </div>
+            <div class="col-lg-4 text-center mt-5 mt-md-0 mt-lg-0">
+                <div class="num-disc">2</div>
+                <div style="font-size:17px;">
+                    The way to fix that issue is to swap "Thunder Tokens (TT)" for "Wrapped Thunder Tokens (WUNDER).
+                    These tokens conform to ERC20 standards, they also represent a 1:1 value of TT and can be swapped back
+                    for Thunder Tokens at any time.
+                </div>
+            </div>
+            <div class="col-lg-4 text-center mt-5 mt-md-0 mt-lg-0">
+                <div class="num-disc">3</div>
+                <div style="font-size:17px;">
+                    Now that you have ERC20 compatible WUNDER tokens. They can be used on DEX's, Markets & other dApps throughout the ThunderCore ecosystem.
+                    At any time you can unwrap your WUNDER back to TT.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="landing-panel">
+    <div class="container pt-5 pb-5">
+        <div class="row">
+            <div class="col-lg-6">
+                <h3 style="text-shadow: 1px 1px 4px #3c3232;">Wrap TT</h3>
+                When you wrap "Thunder Tokens (TT)" you'll receive "Wrapped Thunder Tokens (WUNDER)" in return. They are swapped at a 1:1 ratio and will be
+                in your wallet immediately after the transaction is confirmed.
+            </div>
+            <div class="wrap-tables col-lg-6 col-offset" style="background-color: #343a40">
+
+                <table class="table table-sm tbl-wrap-large" style="width:100%;color:white;margin-bottom: 0;margin-top:15px;">
+                    <thead>
+                    <tr>
+                        <th style="width:auto;">Token</th>
+                        <th style="width:auto;">Balance</th>
+                        <th style="width:205px;" class="text-center">TT <i class="fas fa-exchange-alt"></i> WUNDER</th>
+                    </tr>
+                    </thead>
+                    <tr>
+                        <td>TT</td>
+                        <td><span class="userEthBalance"></span> TT</td>
+                        <td class="text-center" style="width:205px;">
+                            <div class="input-group">
+                                <input id="wrapTotal11" type="text" class="form-control userEthBalance wrapTotal" placeholder="Amt">
+                                <div class="input-group-append">
+                                    <button type="button" class="btn btn-primary btn-sm" onclick="Wunder.wrapTokens(1);">WRAP</button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <table class="table tbl-wrap-small" style="width:100%;color:white;margin-bottom: 20px;margin-top:10px;">
+                    <tr>
+                        <td style="width:auto;">Token:</td>
+                        <td>TT</td>
+                    </tr>
+                    <tr>
+                        <td style="width:auto;">Balance:</td>
+                        <td><span class="userEthBalance"></span> TT</td>
+                    </tr>
+                    <tr>
+                        <td nowrap>TT <i class="fas fa-exchange-alt"></i> WUNDER:</td>
+                        <td nowrap style="width:225px;">
+                            <div class="input-group">
+                                <input id="wrapTotal12" type="text" class="form-control userEthBalance wrapTotal" placeholder="Amt">
+                                <div class="input-group-append">
+                                    <button type="button" class="btn btn-primary btn-sm" onclick="Wunder.wrapTokens(2);">WRAP</button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="landing-panel">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <h2 style="text-shadow: 1px 1px 4px #3c3232;">Unwrap WUNDER</h2>
+                When you unwrap "Wrapped Thunder Tokens (WUNDER)" you'll receive Wrapped "Thunder Tokens (TT)" in return. They are swapped at a 1:1 ratio and will be
+                in your wallet immediately after swapping.
+            </div>
+            <div class="wrap-tables col-lg-6" style="background-color: #343a40;">
+                <table class="table table-sm tbl-wrap-large" style="width:100%;color:white;margin-bottom: 0;margin-top:15px;">
+                    <thead>
+                    <tr>
+                        <th style="width:auto;">Token</th>
+                        <th style="width:auto;">Balance</th>
+                        <th style="width:205px;" class="text-center">WUNDER <i class="fas fa-exchange-alt"></i> TT</th>
+                    </tr>
+                    </thead>
+                    <tr>
+                        <td>WUNDER</td>
+                        <td><span class="userWUNDERBalance"></span> WUNDER</td>
+                        <td class="text-center">
+                            <div class="input-group">
+                                <input id="unwrapTotal1" type="text" class="form-control userWUNDERBalance" placeholder="Amt">
+                                <div class="input-group-append">
+                                    <button type="button" class="btn btn-primary btn-sm" onclick="Wunder.unwrapTokens(1);">UNWRAP</button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+
+                <table class="table tbl-wrap-small" style="width:100%;color:white;margin-bottom: 20px;margin-top:10px;">
+                    <tr>
+                        <td style="width:auto;">Token:</td>
+                        <td nowrap>WUNDER</td>
+                    </tr>
+                    <tr>
+                        <td style="width:auto;">Balance:</td>
+                        <td nowrap><span class="userWUNDERBalance"></span> WUNDER</td>
+                    </tr>
+                    <tr>
+                        <td nowrap>WUNDER <i class="fas fa-exchange-alt"></i> TT:</td>
+                        <td nowrap style="width:225px;">
+                            <div class="input-group">
+                                <input id="unwrapTotal2" type="text" class="form-control unwrapTotal userWUNDERBalance" placeholder="Amt">
+                                <div class="input-group-append">
+                                    <button type="button" class="btn btn-primary btn-sm" onclick="Wunder.unwrapTokens(2);">UNWRAP</button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <footer class="pt-4 my-md-5 pt-md-5">
+        <div class="row">
+            <div class="offset-2 col-8 text-center">
+                <p>Site created by ThunderCore community members.</p>
+                <p>The original <a href="https://etherscan.io/address/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2#code">WETH</a>.</p>
+            </div>
+        </div>
+    </footer>
+</div>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha256-3blsJd4Hli/7wCQ+bmgXfOdK7p/ZUMtPXY08jmxSSgk=" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o"
+        crossorigin="anonymous"></script>
+<script src="public/js/wunder.js"></script>
+<script>
+    $('body').scrollspy({
+        target: '#list-example'
+    })
+</script>
+</body>
+</html>

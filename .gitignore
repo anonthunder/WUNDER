@@ -1,0 +1,6 @@
+# private files
+wunder-norm.js
+
+# env variables
+.idea
+.git

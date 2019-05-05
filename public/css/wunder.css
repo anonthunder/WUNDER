@@ -1,0 +1,84 @@
+:root {
+    --main-bg-color: #721c24;
+    --main-text-color: black;
+}
+
+.num-disc {
+    font-size: 40px;
+    display: inline-block;
+
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    line-height: 99px;
+    background-color: #007bff;
+    margin-bottom: 15px;
+    color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+h1, h2, h3, h4, h5, .num-disc, button, a {
+    font-family: 'Orbitron', cursive;
+}
+
+body, footer {
+    color: var(--main-text-color) !important;
+    font-family: 'Roboto', cursive;
+}
+
+body {
+    font-size: 17px;
+    background-color: white;
+    background-image: url("https://www.transparenttextures.com/patterns/axiom-pattern.png");
+    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+
+nav, nav a {
+    color: #000000 !important;
+}
+
+nav {
+    background-color: #e4e4e4fc !important;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+td, th {
+    border-color: transparent !important;
+}
+
+/*Mobile*/
+@media only screen and (max-width: 600px) {
+    .scroll-down-text, .tbl-wrap-large, .tbl-wrap-large {
+        display: none;
+    }
+
+    .main-landing-panel {
+        height: auto;
+        padding: 15px 0;
+    }
+
+    .landing-panel {
+        padding: 55px 0;
+    }
+    .wrap-tables {
+        margin-top:10px;
+    }
+}
+
+/*large*/
+@media only screen and (min-width: 601px) {
+    .tbl-wrap-small {
+        display: none;
+    }
+
+    .main-landing-panel {
+        height: 100vh;
+        padding: 15px 0;
+    }
+
+    .landing-panel {
+        padding: 115px 0;
+    }
+}
